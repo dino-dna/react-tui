@@ -13,7 +13,7 @@ react-tui is both:
 
 This project was originally a fork of [react-blessed](https://github.com/Yomguithereal/react-blessed) to add Typescript, but soon became a moderate rewrite of the reconciler with a component library and a growing visual test suite.
 
-## Table Of Contents  <!-- omit in toc -->
+## Table Of Contents <!-- omit in toc -->
 
 - [Install](#install)
 - [Usage](#usage)
@@ -46,12 +46,14 @@ before trying to write a nice terminal app.
 
 ```tsx
 // get-started.tsx
-import React from 'react';
-import blessed from 'neo-blessed';
-import { createBlessedRenderer } from '@dino-dna/react-tui';
+import React from "react";
+import blessed from "neo-blessed";
+import { createBlessedRenderer } from "@dino-dna/react-tui";
 // setup a blessed screen & container
-const screen = blessed.screen({ /* ... */ });
-screen.key(['q', 'C-c'], () => process.exit(0));
+const screen = blessed.screen({
+  /* ... */
+});
+screen.key(["q", "C-c"], () => process.exit(0));
 const render = createBlessedRenderer(blessed, screen);
 const container = blessed.box();
 screen.append(container);

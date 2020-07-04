@@ -9,7 +9,7 @@
     "clean:demo": "rm -f bundle.js",
     "clean": "del '{examples,src,test,scripts}/**/*.{d.ts,js}' 'dist' './*.log'",
     "demo": "run-p clean:demo bundle:demo start:demo",
-    "format": "prettier '{examples,run,src,test}/**/*.{ts,tsx}' './*.{ts,js}' --write",
+    "format": "prettier '{docs,examples,run,src,test}/**/*.{md,ts,tsx}' './*.{md,ts,js}' --write",
     "postinstall": "patch-package",
     "prebundle:demo": "wait-on scripts/webpack-hmr-log.js && cp scripts/webpack-hmr-log.js ./node_modules/webpack/hot/log.js",
     "prepublish": "npm run build",
