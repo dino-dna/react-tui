@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "ES2016",
+    "declaration": true,
+    "lib": ["ES2019.Array"]
+  }
+}

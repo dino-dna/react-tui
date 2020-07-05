@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+node_modules
+dist
+.idea
+**/*.js
+!*.config.js
+*.map
+examples/**/*.js
+src/**/*.js
+**/*.d.ts

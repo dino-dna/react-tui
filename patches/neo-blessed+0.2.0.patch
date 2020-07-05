@@ -1,0 +1,39 @@
+diff --git a/node_modules/neo-blessed/lib/colors.js b/node_modules/neo-blessed/lib/colors.js
+index 6d0cb89..3e871af 100644
+--- a/node_modules/neo-blessed/lib/colors.js
++++ b/node_modules/neo-blessed/lib/colors.js
+@@ -292,22 +292,22 @@ exports.colors = (function() {
+ 
+ // Map higher colors to the first 8 colors.
+ // This allows translation of high colors to low colors on 8-color terminals.
+-exports.ccolors = (function() {
+-  var _cols = exports.vcolors.slice()
+-    , cols = exports.colors.slice()
+-    , out;
++// exports.ccolors = (function() {
++//   var _cols = exports.vcolors.slice()
++//     , cols = exports.colors.slice()
++//     , out;
+ 
+-  exports.vcolors = exports.vcolors.slice(0, 8);
+-  exports.colors = exports.colors.slice(0, 8);
++//   exports.vcolors = exports.vcolors.slice(0, 8);
++//   exports.colors = exports.colors.slice(0, 8);
+ 
+-  out = cols.map(exports.match);
++//   out = cols.map(exports.match);
+ 
+-  exports.colors = cols;
+-  exports.vcolors = _cols;
+-  exports.ccolors = out;
++//   exports.colors = cols;
++//   exports.vcolors = _cols;
++//   exports.ccolors = out;
+ 
+-  return out;
+-})();
++//   return out;
++// })();
+ 
+ var colorNames = exports.colorNames = {
+   // special
