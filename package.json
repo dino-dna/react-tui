@@ -21,7 +21,8 @@
     "url": "git+https://github.com/dino-dna/react-tui.git"
   },
   "files": [
-    "src"
+    "src",
+    "types"
   ],
   "keywords": [
     "blessed",
