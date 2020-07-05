@@ -1,6 +1,6 @@
 {
   "name": "@dino-dna/react-tui",
-  "version": "0.0.0-semantic-release",
+  "version": "0.0.1-semantic-release",
   "description": "React in your terminal emulator",
   "main": "src/index.js",
   "scripts": {
@@ -12,7 +12,6 @@
     "format": "prettier '{docs,examples,run,src,test}/**/*.{md,ts,tsx}' './*.{md,ts,js}' --write",
     "postinstall": "patch-package",
     "prebundle:demo": "wait-on scripts/webpack-hmr-log.js && cp scripts/webpack-hmr-log.js ./node_modules/webpack/hot/log.js",
-    "prepublish": "npm run build",
     "start:demo": "sleep 1 && wait-on dist/main.bundle.js && node --inspect dist/main.bundle.js",
     "start": "DEBUG=reconciler:blessed nodemon --inspect -I examples/index",
     "test": "ava"
@@ -21,13 +20,19 @@
     "type": "git",
     "url": "git+https://github.com/dino-dna/react-tui.git"
   },
+  "files": [
+    "src"
+  ],
   "keywords": [
     "blessed",
     "reconciler",
     "component",
     "components",
     "renderer",
-    "react"
+    "react",
+    "tui",
+    "terminal",
+    "neo-blessed"
   ],
   "author": "cdaringe",
   "license": "MIT",
