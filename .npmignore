@@ -1,13 +1,1 @@
-.DS_Store
-*.log
-node_modules
-test
-examples
-*.png
-.npmignore
-.gitignore
-/src
-/img
-/rollup.config.js
-/run.js
-/.idea
+**/*.yml

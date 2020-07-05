@@ -1,0 +1,25 @@
+name: main
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14.x'
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test
+      - name: commitlint
+        uses: wagoid/commitlint-github-action@v1
+      - name: release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
+            GITHUB_TOKEN=$GH_TOKEN npx semantic-release --verbose
+          else
+            echo "skipping release on branch $GITHUB_REF"
+          fi
