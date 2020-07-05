@@ -11,8 +11,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run test
-      - name: commitlint
-        uses: wagoid/commitlint-github-action@v1
+      - run: npx commitlint --from=origin/main --to HEAD
       - name: release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
