@@ -18,7 +18,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           if [[ "$GITHUB_REF" = "refs/heads/main" ]]; then
-            GITHUB_TOKEN=$GH_TOKEN npx semantic-release --verbose
+            GITHUB_TOKEN=$GH_TOKEN npx semantic-release --branches main --verbose
           else
             echo "skipping release on branch $GITHUB_REF"
           fi
